@@ -58,38 +58,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
             padding: 30px 16px 40px;
         }
 
         .video-wrapper {
             width: 100%;
-            max-width: 900px;
+            max-width: 400px;
             margin: 0 auto;
-            background-color: #000;
-            border-radius: 6px;
-            overflow: hidden;
         }
 
-        .video-container {
-            position: relative;
+        .video-wrapper vturb-smartplayer {
+            display: block;
             width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container vturb-smartplayer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
 
         .sound-notice {
             width: 100%;
-            max-width: 900px;
+            max-width: 400px;
             margin: 0 auto;
             background-color: #ffffff;
             text-align: center;
@@ -143,13 +128,13 @@
             }
 
             .video-wrapper {
-                border-radius: 4px;
+                max-width: 360px;
             }
 
             .sound-notice {
+                max-width: 360px;
                 font-size: 15px;
                 padding: 12px 10px;
-                border-radius: 0 0 4px 4px;
             }
 
             .sound-notice .icon {
@@ -162,7 +147,6 @@
 
             .disclaimer p {
                 font-size: 11px;
-                line-height: 1.5;
             }
 
             .copyright {
@@ -176,10 +160,16 @@
                 padding: 12px 6px 20px;
             }
 
+            .video-wrapper {
+                max-width: 100%;
+            }
+
             .sound-notice {
+                max-width: 100%;
                 font-size: 14px;
                 padding: 10px 8px;
                 gap: 6px;
+                border-radius: 0;
             }
 
             .sound-notice .icon {
@@ -202,9 +192,7 @@
 
     <div class="main-content">
         <div class="video-wrapper">
-            <div class="video-container">
-                <vturb-smartplayer id="vid-69bcab64b1f8e9f7f4f081ac"></vturb-smartplayer>
-            </div>
+            <vturb-smartplayer id="vid-69bcab64b1f8e9f7f4f081ac"></vturb-smartplayer>
         </div>
 
         <div class="sound-notice">
