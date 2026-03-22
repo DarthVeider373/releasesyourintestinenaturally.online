@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="fr"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Présentation</title>
@@ -23,7 +25,12 @@
     </script>
 
     <!-- UTMify UTMs -->
-    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
 
     <style>
         * {
@@ -51,19 +58,39 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px 20px 0;
+            justify-content: flex-start;
+            padding: 30px 16px 40px;
         }
 
         .video-wrapper {
             width: 100%;
             max-width: 900px;
+            margin: 0 auto;
             background-color: #000;
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container vturb-smartplayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .sound-notice {
             width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
             background-color: #ffffff;
             text-align: center;
             padding: 14px 16px;
@@ -74,6 +101,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            border-radius: 0 0 6px 6px;
         }
 
         .sound-notice .icon {
@@ -83,8 +111,8 @@
         .footer-section {
             width: 100%;
             background-color: #4a4a4a;
-            padding: 30px 20px 15px;
-            margin-top: 0;
+            padding: 30px 16px 15px;
+            margin-top: auto;
         }
 
         .disclaimer {
@@ -107,6 +135,65 @@
             max-width: 900px;
             margin: 0 auto;
         }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 16px 10px 30px;
+            }
+
+            .video-wrapper {
+                border-radius: 4px;
+            }
+
+            .sound-notice {
+                font-size: 15px;
+                padding: 12px 10px;
+                border-radius: 0 0 4px 4px;
+            }
+
+            .sound-notice .icon {
+                font-size: 18px;
+            }
+
+            .footer-section {
+                padding: 20px 12px 12px;
+            }
+
+            .disclaimer p {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+
+            .copyright {
+                font-size: 12px;
+                padding-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 12px 6px 20px;
+            }
+
+            .sound-notice {
+                font-size: 14px;
+                padding: 10px 8px;
+                gap: 6px;
+            }
+
+            .sound-notice .icon {
+                font-size: 16px;
+            }
+
+            .disclaimer p {
+                font-size: 10px;
+            }
+
+            .copyright {
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,12 +202,9 @@
 
     <div class="main-content">
         <div class="video-wrapper">
-            <vturb-smartplayer id="vid-69bcab64b1f8e9f7f4f081ac" style="display: block; margin: 0 auto; width: 100%; max-width: 900px;"></vturb-smartplayer>
-            <script type="text/javascript">
-                var s = document.createElement("script");
-                s.src = "https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/69bcab64b1f8e9f7f4f081ac/v4/player.js",
-                s.async = !0, document.head.appendChild(s);
-            </script>
+            <div class="video-container">
+                <vturb-smartplayer id="vid-69bcab64b1f8e9f7f4f081ac"></vturb-smartplayer>
+            </div>
         </div>
 
         <div class="sound-notice">
@@ -140,6 +224,12 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        var s = document.createElement("script");
+        s.src = "https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/69bcab64b1f8e9f7f4f081ac/v4/player.js";
+        s.async = true;
+        document.head.appendChild(s);
+    </script>
 
-
-</body></html>
+</body>
+</html>
